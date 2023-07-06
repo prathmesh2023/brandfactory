@@ -1,0 +1,45 @@
+
+<style>
+
+
+  .razorpay-payment-button{
+      width:60%;
+       height: 80px;
+    font-size: 23px;
+    background-color: #ad1457;
+    color: white;
+  }
+
+</style>
+<center>
+<br>
+<br>
+<div class="center">
+    <form class="text-center border border-light p-5" action="/pay/{{amount}}" method="POST">
+
+        {% csrf_token %}
+
+      
+        <!-- RAZORPAY INTEGRATION HERE -->
+
+        <script src="https://checkout.razorpay.com/v1/checkout.js" 
+        data-key="rzp_test_J0Y0LwwxWL2t7H" 
+        data-amount="100"
+        data-currency="INR"
+        data-order_id="{{payment.id}}" 
+        data-buttontext="Make Payement" 
+        data-name="Professional Cipher" 
+        data-description="Django and Data Science" 
+        data-image="https://example.com/your_logo.jpg" 
+        data-prefill.name="PC" 
+        data-prefill.email="pc@studygyaan.com" 
+        data-theme.color="#ad1457">
+        </script>
+    </form>
+
+
+   
+</div>
+</div>
+
+
